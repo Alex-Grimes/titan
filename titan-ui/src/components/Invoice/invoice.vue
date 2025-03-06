@@ -30,7 +30,11 @@
 </template>
 
 <script setup lang="ts">
-defineModel
+import Invoice from '../../models/Invoice/invoice.ts'
+const invoice = defineModel({
+  type: Invoice,
+  default: () => new Invoice(),
+})
 </script>
 
 <style lang="scss" scoped></style>
