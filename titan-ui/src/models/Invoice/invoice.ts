@@ -14,7 +14,7 @@ export class Invoice {
   invoiceDate?: Date
   paymentTerms?: string
   paymentDueDateUnix?: Date
-  paymentDurDate?: Date
+  paymentDueDate?: Date
   productDescription?: string
   invoiceItemList?: []
   invoiceTotal?: number
@@ -83,8 +83,8 @@ export class Invoice {
       this.paymentDueDateUnix = opts.paymentDueDateUnix
     }
 
-    if (opts?.paymentDurDate != null) {
-      this.paymentDurDate = opts.paymentDurDate
+    if (opts?.paymentDueDate != null) {
+      this.paymentDueDate = opts.paymentDueDate
     }
 
     if (opts?.productDescription != null) {
