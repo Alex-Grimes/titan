@@ -1,11 +1,8 @@
 <template>
-  <router-link
-    class="invoice flex"
-    :to="{ name: 'Invoice', params: { invoiceId: invoice.invoiceId } }"
-  >
+  <router-link class="invoice flex" :to="{ name: 'Invoice', params: { invoiceId: invoice.id } }">
     <div class="left flex">
-      <span class="tracking-number">#{{ invoice.invoiceId }}</span>
-      <span class="due-date">{{ invoice.paymentDueDate }}</span>
+      <span class="tracking-number">#{{ invoice.id }}</span>
+      <span class="due-date">{{ invoice.paymentDurDate }}</span>
       <span class="person">{{ invoice.clientName }}</span>
     </div>
     <div class="right flex">
@@ -30,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import Invoice from '../../models/Invoice/invoice.ts'
+import { Invoice } from '../../models/Invoice/invoice.ts'
 const invoice = defineModel({
   type: Invoice,
   default: () => new Invoice(),
