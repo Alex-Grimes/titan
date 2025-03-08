@@ -1,3 +1,5 @@
+import { Item } from '../Item/item.ts'
+
 export class Invoice {
   id?: string
   billerStreetAddress?: string
@@ -16,7 +18,7 @@ export class Invoice {
   paymentDueDateUnix?: Date
   paymentDueDate?: Date
   productDescription?: string
-  invoiceItemList?: []
+  invoiceItemList?: Item[]
   invoiceTotal?: number
   invoicePending?: boolean
   invoiceDraft?: boolean

@@ -22,9 +22,9 @@
       </div>
       <div class="right flex">
         <button @click="toggleEditInvoice" class="dark-purple">Edit</button>
-        <button @click="deleteInvoice(currentInvoice.docId)" class="red">Delete</button>
+        <button @click="deleteInvoice(currentInvoice.id)" class="red">Delete</button>
         <button
-          @click="updateStatusToPaid(currentInvoice.docId)"
+          @click="updateStatusToPaid(currentInvoice.id)"
           v-if="currentInvoice.invoicePending"
           class="green"
         >
@@ -32,7 +32,7 @@
         </button>
         <button
           v-if="currentInvoice.invoiceDraft || currentInvoice.invoicePaid"
-          @click="updateStatusToPending(currentInvoice.docId)"
+          @click="updateStatusToPending(currentInvoice.id)"
           class="orange"
         >
           Mark as Pending
@@ -107,10 +107,32 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { Invoice } from '../models/Invoice/invoice'
 
 const currentInvoice = defineModel({
   type: Invoice,
   default: () => new Invoice(),
 })
+
+const editing = ref(false)
+
+const deleteInvoice = (id: string | undefined) => {
+  return id
+  //Call delete here
+}
+
+const updateStatusToPaid = (id: string | undefined) => {
+  //update Status
+  return id
+}
+
+const updateStatusToPending = (id: string | undefined) => {
+  //update Status
+  return id
+}
+
+const toggleEditInvoice = () => {
+  editing.value = !editing.value
+}
 </script>

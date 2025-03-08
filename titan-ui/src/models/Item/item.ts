@@ -8,8 +8,17 @@ export class Item {
     if (opts?.itemName != null) {
       this.itemName = opts.itemName
     }
-    this.qty = opts?.qty
-    this.price = opts?.price
-    this.total = opts?.total
+
+    if (opts?.qty != null) {
+      this.qty = opts.qty
+    }
+
+    if (opts?.price != null) {
+      this.price = opts.price
+    }
+
+    if (opts?.total != null) {
+      this.total = opts.total
+    }
   }
 }
